@@ -93,10 +93,10 @@ all_deaths <- read_csv(url(urlalldeaths))
 url <- "http://observatorio.ministeriodesarrollosocial.gob.cl/documentos/PLANILLA_Estimaciones_comunales_tasa_pobreza_por_ingresos_multidimensional_2017.xlsx"
 
 download.file(url,
-              destfile = "casen/deprivation.xlsx",
+              destfile = "data/deprivation.xlsx",
               mode = "wb")
 
-deprivation <- read_excel("casen/deprivation.xlsx",
+deprivation <- read_excel("data/deprivation.xlsx",
                           sheet = 2,  range = "A4:E348", 
                           col_names = c("council_code", "region_name", "council_name", 
                                         "total_depriv.", "prop. depriv."))
@@ -111,10 +111,10 @@ View(deprivation)
 urlage <- "http://www.censo2017.cl/wp-content/uploads/2017/12/Cantidad-de-Personas-por-Sexo-y-Edad.xlsx"
 
 download.file(urlage,
-              destfile = "ine/pop_age.xlsx",
+              destfile = "data/pop_age.xlsx",
               mode = "wb")
 
-pop_age <- read_excel("ine/pop_age.xlsx",
+pop_age <- read_excel("data/pop_age.xlsx",
                       sheet = 2,  range = "C26:L7636", 
                       col_names = c("region_name", "region_code", "county_name", "county_code", "council_name", 
                                     "council_code.", "age_group", "male", "female", "total"))
